@@ -15,3 +15,6 @@ def programs(request):
 
 def data(request):
     return render(request, 'users/data.html')
+
+def contact(request):
+    return render(request, 'users/contact.html')
