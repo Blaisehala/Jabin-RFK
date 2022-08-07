@@ -1,4 +1,6 @@
 {% load static %}
+
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -10,12 +12,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}">
-
-    {% if title %}
+        {% if title %}
   <title>Rafikistry- {{title}}</title>
   {% else %}
   <title>Rafikistry</title>
@@ -24,7 +25,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light"  style="background-color:"">
+    <nav class="navbar navbar-expand-lg navbar-light"  style="">
         <a class="navbar-brand" href="#"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxESEhMREhMWFRUXFhcZGBcYGBUVGhgYFxcYGBsYGxkdHSggGB0lGxgXIjEjJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGjAmICUrLS0tLS0tLS0tLS8tLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAIEBhQMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABgcDBAUBAv/EAEIQAAEDAQUFBQUHAQYHAQAAAAEAAgMRBAUSITEGQVFhcQcTIoGRFDJCUqEjYnKCscHRkiQzQ6Ky4RY0U1TC8PEV/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAIDBAUBBv/EADMRAAIBAgQDBgUEAwEBAAAAAAABAgMRBBIhMRNBUQUiYXGx8DKBodHhFJHB8SNCUjMV/9oADAMBAAIRAxEAPwCjUREAREQBERAF2dmrvE0tXiscYxv5gEAN/M4hvmTuXHorDuy7TZ4WxH33UfLydTws/KCfNzuCz4mrw4X5vYspwzMhV7WYRyuaNMiOhFaLQXX2n/5hw4Bv+kLkK2k704t9CM1ZsL1etFVObjuH2eksoBm1aw5iLm4b5OA0b10jVrRpRvIQg5OyOVd+zJoH2hxjBzEYAMhHE1yjHXPlTNY72uNrW44cVBq1xDjTiCAP0UpdGSSTmTqTnVed0uZ+vnmzcuhp4MbFaoty8YO7lkYNA406aj6LTXXTuroyNWCIi9AREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAXq+4wKgE0FQrLk2IsneVHeYB8GIeKnF1Kiu+nlRZ6+Kp0LcR73+hOFOU/hI9sXcuI+1SDwMP2YOj5Bvpva3U7iaDipY6KuZ8yun3IAADQ1oFGtAoGgaADcFxNrbcIIHU99/hb56nyC4VTEyxVZJc9F4e92bo01Tg2yu73nEk0jxoXGnQZD6BaS9Ux2M2eDh7ZaAO6bUsa7R5bq533Gn1IppVfQVKkKFO8tl7+pgjFzlZGXZ+6WWWMW20ZOpijafgB0kI3uPwjdrwXBva/pJiQCWM4A5nm471m2pv11pkNCe7BNPvH5io+qqNJyfFq/FyX/K6efXxJykl3Y7epJNjbU7v+6JJa9rsuDmgur6AjzU37hQHY1tbbAPvH0wur9FZVrIjjfI7INaSfILmdq6Vlbdr+bGjDaxZVF9vraJT98j0y/Zc9ZZZC5xcdSST5mqxLuRWWKXQxvcIiL08C9C8XV2dsAntEcZ92uJ/wCBgxO9QCOpC8bSTbCV9DpzXIxtlaSD3xaZSanJpFWspp7viJ1q4Dcaxgqxr5BMczzqWPPqDkq4WTCVpVVJvqW1YKNkEX0vFsKjxda5bpdaC/xYGMFXOpWhOTWgVFST9ATuXNjjJIAFScgBqTwVj2W7e4iZANW+KQjfKdfJuTR0J3rNiq/Chfm9iynDMyu7VZzG9zHagrAulf7q2iTqB6AD9lzVfB3im+hB6MIiKR4EREAREQBEW3ZrBLICY43vA1LWucB1IGSA1EXpXiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCt/ZK922qFtT9qwAPG80yD+h161VQLqXCyV1oiZC5zJHODQ4VyqcyeQGZ6LHjcLHEU7N2a1T98i6jVdOVy5ngAEnIAVJ4AKodqb3NpnLh7jfCwcuPmpj2j32I2eyxnN+buIZuHUqC3HdclqlbDHqdTua0audyH8Deuf2RhlCDrz8beXN/P0LsVUu8i9s6ex+zhtctX1ELKYzpU7o2nifoM+Fett9fgH9khoGtADsOQAGkYG4AKQ37bIrtsjYodaFrK6ucfekdz3+g3Kp5HlxJJqSak8SVpoN4upxpfBH4V1f/X2/BCf+KORbvf7GNeL6WzYrFJM8RxMc950a0EnryHMrpmYkPZzYy+1h+6ON7j1cO7A9X18l3e0W9AyMWdp8T83cmj+T+i2rFHFdFkJlIdPJQkA1qQPCwcWtqaniTyVcXjbnzyOlkNXOPpyHJcmEP1WL4y+COifV/ZM1SfCp5Ob38DUK8Xq79ybLWi1RvljwhrTQYiRjdSpa2gOmWZoMwunOpGEc03ZGZJt2RH0WWRhaS0ihBII5hYlM8CnfZ/d/2cs5HvERN6Cj3n17seqgoCuOCKOw2SNshwiNgxc3uq5wHE4iR5Ln9pVslLIt5Oxfh43ld8ji7WStis7wdX+EDjXX6Ktiupf17PtMpe7IDJreA/ladjsr5XtjjaXPcaNaNSVdg8O6NK0t3q/sRrTU5abEw7Po48MrqjvsmjiI6ZkdTQE8BzXK2vulkEgcwij6nBvad+XArQvW6p7HIGyeF1Ktc01BHJwWhJKXGriSeJJJSFJutxozvFrb83EpWhka1JLsFdveTGcjwwgEc5DXB6ULvyKYXlI2GN8rtGj1O4eZX3sldwgsceLIvHevJ4OAw+jA31Kh20d6Pts7bPAC5uKjQPjdx6f/AFcyd8ZinFfDHd+H5NCtSpXe7IvNIXOLjqSSepNViVmWLs+iEZEz3OlI1YQGMPLKr+uQ5b1XlsgMcj4zmWuLSeNDSq6tHF0q8nGDvb3oZp0pQScluaym/Z5HH9q6o77JrRvDDXEW8yaCu4A8VELJZnyvbHG0ue40aBqSVvXtdM9jkDZPC6lWuaag8aOHBSrxU4ulms2vfyPKbyvNa9jf2xupkMgcwgB/wb2neQOBUbWSWVzjVxJPEkkrubLbOPtj9S2Jvvvp/lbxcfpqUi+DS/yS2Wr9/wBh9+XdW5H14pZt7d8EEsbIWYPBmKk6GgNTqTnVcW57omtT+7hbiIFTUhoaNKknIZkL2nWjUpqqtF46HkoOMsvM+LosDp5o4W5F7qV3NGrnHkGgnyVoSRRwRYW+CKMZA/Vx4uOpPNc3YjZiWzvlknaA7CGMo5rqhxq52RyyAGfzFaG2lpnmd7PBFK5g94tY84jwBAzAXLxM/wBTXVKD7q1b5e+S8zTTXChne/IhVtmxyPeBQOcTThUrWWWWMtJaQQQaEEUIPAjcpTs/sc6eJ08rjEzCe7yzcR8R4MHHfuXVq1IUoZpuyM0YubsiIosj20NP0WNWEQiz2ezvkcGsa57jo1oLiegGa+HtINDkRqOCAxosrIySAMyTQAZkngvJGEGhyI1HBAY0REAREQBERAEREAREQBTjs3sTQ+a2Se5Cw0J+ZwNT5Mr/AFBQiinl/O9ju6GxjKSXxy8fFQkHoMLfylY8a24KlHebt8ub/Yto2vmfLX7ESvC1vtMz5DUue7IanM5NA9ArX2VuRtgs5L6d44YpXZeGgqGA8Bv4noFwOzvZ7CBbZRn/AILTu3GX9Q3zPBZe0e+8EYszD4n5v5N4eZXPxtV16kcHR0X+3kuXkl9bI0UY5IutP5EO2mvZ1rtDn54a4Yxy3ZcSpNdXZ5WMPtUpjJzwNDatH3nHIHlTJfHZdYY3PmncAXx4AyueHFiq6nHw0B3Zqc3vZBPDLCT77CPPcfVeY3HPDyjh6PdStd9PL+fEUaOdOpLUi42YuiAVlmx/jlaB6MAP1WC3bbWWztMVhib1DcDep3v81XcsZaS0ihBII4EGhCxrb/8APz61qkp+D0X7Lcp49tIRS9TcvG3yzvMkri5x47uQG4KS7LbEyWlommcYoT7tBV7xxaDk0fePkCuPsrdwtNrhhd7pcS7m1gL3DlUNI81dbtKCgyoAMgMsgOACp7Sxzw0VTpLVr9l4E8PRVS8pbFYXva7vsrnRQWZszxk58pLwCNwGhPQBTu4JGyWSJ8YYKxjJoDGB594ADQY8Sre79lLVNI4ytMUYcTJK8FopXPDX3zwpkp1sfaxL3vdDDZog2KIcSKue488wTxxVWXtGlDg92WaS1k278reWt9EizDyefayei9+pVd62aWOV7JhhfiJcOudRxBWfZ253WudsLXBlQSXHc0amm88lI+0iAyWyNkbC6QxjJoJJzdTIea4F53VPYnRl7gyUjFRrvEzhUjeutRrurRjLRSktP66GacMs2t0icXf2exxTRyGZz2scHFhjAxFuYFcWQrTcVs7YbO2m2OaGSRtjbmQ4vqXH4smlZdlJ7S6wumlkL3vDzHWmTWijetXB30UBl2yt7m4TMRzDWg+oC5FOOMrV280W6el2tNeaVv6NUnRjBKzSlr+w2l2a9jDcU7Hucc2tBBA45qY9n9yNs8BtctA6RtWk/BFx5F2v4acSq/uqE2i0wxvJd3kjGuJJJoXAHPpVWR2jtlNlAiacOMYw0HJgBpkN2QWrGyqWp4Zz1m9Xtp+Sqio96olouRC9t7+bapWiMeCOoB+YmlT0yXL2fsHtFphg3PeK/hGbj/SCtSy2Z8jgyNrnuOjWguJ8gp/2fXG+G0SvlpjZEBh1wukJ154Wu9VrqShg8O1H/VO3vzK43q1NebPe0K/jX2OHU0x4daHSMLLd9lZdFnbPNG580pDX4afZgivd18szxy3Z47xsLLBPNb5CJHF/9nbzcKlx5t0HrwUqt0EVuspaD4JWAtPA6tPUH91xp1oUqNOCu6bfflzb3a+X8W5M1qDnOTfxLZELt3aKSCIoaHi51aeQUFlkLnFxNSSSTzOZWa2WR8Ujonij2mhHPlxr+671n2TlAgM5ERmljY2M++Q9wBcR8OR0OfTf26VHD4aN4aJ897+7mOU6lR662JP2e3IIITbJaBz2nBXLBFvdyLv9P4lGNuL/AG2qRrY/7uOtD8xNKnpkpp2iNlNkwwtOHE0ODQcowDQUHwigCqqz2d8jgyNrnuOjWguJ8hmsXZ8f1E3i573aiuiLa74a4S+fieWeBz3BjAS4mgAVobL3lZ7O2GwGQOl8RJaPBjca4cW80yrvp0UNu/Z21icQxkNlwEuGKmBuhxHzGlcyuXedhls8zo5Kh7TWoOu8OB38arXiKVPFLhOfK+m/g/L18CunKVLvW9/cs7by5mz2Z0mj4gXNPED3m9KZ9QoBsnfr7JKcDO8EgDS3Qk18NDxqfqp5tDfBZdrZH5STQsFPvPYCT9SVC+z2xCW2xk6RgyebaBv+ctPkud2fphKka2sU39N/qXV//WLho3b8Fi7RXy2xxCSRuJxIbhB376GmdFCrf2iTOBbFGI+ZJcR5ZBdHtSs8rhC9rSY24sRGYaTShPDKuag113VNaHYIY3PO8gZN5udo0dV72dgcPOgq1RJvV6vReG/qe4itNTyRZs3HCbTa4hIDJikaZKmlW1q4k7hRXG0xStc0Fj25tIFCBlTDQaZZUVJTtks73x4hiHhJaa+hU32AifZrPaLZLURltWj5sNSX04fDXfU8FPtXD8SmqilbLbKurfvQjhZ2lltvv4HF252ejsj2Oid4JK+AmpaRz3jNRYDzXZtM1pvC0ZNL3u91jdGt/QAbyVI9ndmWx2+JjpGyOiYZZAM2teCAxoO/xOB8ltjV/T0kq8rySbfv6X5+ZS455dxaXJDs3dEV3WYySkNkc2srjTwjURDpv4nkAqxvy2ie0SzAYQ91QOWn+6sHtMs88kUXdhzmBxxhoJNaZEgbtVE7lsEcDmWi3NcIxmyMtzkI0q0/BX1pwWPs5pxlipu8pXVl4cvoXV1ZqktEvdyW9n+zXcsFqlb9q8VjB/w2H4uTnD0HXKI9oOH22TCBo3FT5qZ+eitm125rI3TOPhDcRPKlVUlqumedktvlIjY4lzS/IyEnINHCm/TrnSjs+vOtiJ16rsrZUvN7LysTrwjCmoR8/wAkbRerxd8whERAEREAREQBERAd/Yy7hPamBwqxn2j/AMLM6ebsI81IYrCbztss0lfZ4nYScxjpowHmakkaDyWXYewYbK+QktdOSARmRGyrajq7F/QFJLM1kTGxRNwsaKNGvUk73E6lcTGYzLVk47pZV4X1k/RI2UqV4q+27/g3LXbGxMc91A1ja5ZABoyAG7LIBUxetvdPK+V2rjXoNwUt2+vfJtnadfE/puH7qCK3srC8ODqy3l6fkjiqmZ5VyJX2e3l3VqwE+GVuH8wzaf1H5laHeKiYpC1wc00IIIPAjMH1Vv3beQmiZKPibWnA6EeRqFm7Yw3ejVXPR/wWYSpo4kI7QLt7u0d80eGXM8nj3vXI+ZUSVs7SWIWiB7PiHiZ+IfzmPNVOQt/ZtbiUVF7x0+300+RRiIZZ3XM72xd4ss9rjkkNGEOaT8uJpAPStK8qq3X2tjW4y4BtK4qilONVQiyd66mGppwqaeijjezo4qanmtbTqe0cQ6aasWHtzejpbIySB/2Lnua/cXUJAIPy1a76KRbJtZHYrO1hBGAOJHzP8Tq8wTh/KoAHn/8AIof+4OHpRh/UuUejtcjWlrXvDTqA4geio/QKpRdCDyqM3y38/Enx8s88tbos3aHbOGz4mw0fKRQkaDqd/RVvJJLaZhiJdJI4AV4uNAOma0VIthLPitkbjpGHSHq1pw/5i1bKGFpYSDlHV21b3/C8iqdSVWSTLUdG2KHu2+7HHgHRraV86V81RCuO+bZhgmdwjd+ipxYexk7VJPm17+pdjN4o3rptZhnimArge11OIBzHorssluZKxskbg5rhUEfvwKoZbMNrkYCGvc0HUBxAPotePwCxVmnZr0K6FfhX0LR2o2vZZmmOIh0pyy0bzd/Cj2wV/wAcb5xaJKGUtcHu3luKoJ3ainRQYlKpDs2lGjKlzlu+fvwDxEnNS6ciRbZ357VOS01jZ4W8+LvNd7s6v8N/skhoCSYieJ1Z56jzVfL0FW1MHTnh+ByW3g+vvqQjWkp5+ZdN8XjZbL/aJGs72lGnC0yGmgBpUKs7VtDLJao7U/PA9rmt3ANcDhHXiuRNO55q9znHiSSfqsKrwmAhQV5PM9rvkui6EqtdzfRe9y+bFb2SsbJG4Oa4VB/Y8DxC4O1O17LM0siIdKdw0bzd/Cq2G1SMBDHuaDqGuIr6LWJWSl2LThO8pXj02v59S2WMk42S1Jv2eXsPaZe9d45m5OJ1cHVp5j9FJ9prpskjmWi0uLWxihAIbjFahpOvHTiqiaaZrPaLVI+mN7nU0xOJ/Vaa2Ac66rQnl0tovTkVwr2hkaudXam/nWuXFTDG3JjeA40WXYi9G2a1Ne80Y9pY4/KCQQTyqAo4vVr4EOFwbd21vfj4lWeWbNzL+MwpWopStd1Oqg21u2oDTZ7KeTnjQcQ3nzUDNrkw4O8fh+XEaemi1lzcP2PCnLNN5ui5ebNFTFykrRVjbu8MdNH3p8BkZjNfhLhiNelVeEgjezAQ0xltMOWHDSgAGlKKhF1LHf1qiZ3cczmt4ZGnSunkr+0MFLE5XCVre7+ZXQrKne63J/tHf8NhjMNmYxsjtzGtaG/edTU8KqO9n16iO1P712czS3ET8WIOFTzofoolJIXEucSSdScyVjU4YCEaMqbd3Jay5+10PHXbkpdNkXle18RWZhkkdSmg3k8AqkvS8J7dPioXOcaMYKmnAALXslnmtEjY2YpHnIAkmg3kk+6ANTuVjXLdcFgjc+odJhJfLwG9rODeep5DJZKdCl2fHN8U3t75Fspyru2yOxejoIoQLRQxRtaC06OcwAAEfEMtN+Sq7abaCS2SYnZMHuM3Aceqx3/fslqfV2TB7rNw5niVxlowOCdFZ6nxa+Svv8/H5IhWrZtI7eoREXRM4REQBERAEREAWSNhJAGZJAA5lY10Ljp7TBXTvY69MYRuyuCygBGGxN0jaGD8ooT5mp81itdvEbHSOOTRX/ZapmKjG1N44iIWnJububuHl/7ovnqOHdapr5s3zqKMTiWu0uke6R2rjUrWRF9CkkrIwBS7Ym8qF0BOviZ1+IemfkVEVmhkLXBzTQg1B4EKutSVWDg+ZKMnF3RanfqFbWXbgf3zB4XnxU3O/g/rVdi6r1Eza6OHvN/cclty0cC1wBBFCFxKObDVLtea9/Q2TtUiVuvVIrXs0+pMTgR8riGkeZyPqFvXJcAicJZy1zm0LImkP8W4vI8NBrhBJO+g17DxNNRzX+5k4cr2sfO0jO5sVms5yd7zhzdieR5Y2t/Kogu5tRb+9mpWobUV4uJq4/t5Lhph4tQvLdtv9/wKjWbTloFLNgRR87+EYH9UjT/4qJqR7JWxrDKwmhe1uHmWurTrQn0TEq9GS8BTdpo7u1tupZy2ubyG/ufoFX6721FrxyBgOTBn+I6+gp9VwVDBUuHRS66ntWWaQREWorCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAs0UZcQ1oJJIAAzJJyAHNYVJNjYx3kkp1jZVvJziGA+QLj1oozmoRcnyPUruxKbmsDbJH3YoZHf3rxx/6bT8rfqc9KLkbZXrRggac3Zu/CNB5n9Ft2u3NjYXu0G7idwCg9rtDpHue7UmvTl0C5eFourV4s+Xr+DTUnljkRrleIi6xlCIiAIiIAiIgCIiAL6a6i+UQHb/4hlwUoMXz7+tNKrjE1zK+UUIU4w+FWPXJvcIiKZ4EREBmgmcxwc0kEaFSKxbQNIpJ4TxFSD+4UXRVVaMKi7yJRm47E4F5Q696z1C5l5X8KFsNanIvOX9I/cqNL1VQwdOLu9ScqrasCV4iLUVBe1XiID2q8REAREQBERAEREAREQBERAEREAREQBERAEREAWzY7W+I4mGh38COBWsiNJqzBuW23ySmrzpoBkB5LTRF4kkrIN3CIi9AREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAf/2Q=="></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
             aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +35,7 @@
         <div class="collapse navbar-collapse" id="myNavbarToggler13">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'data' %}">Data</a>
@@ -43,7 +44,7 @@
                     <a class="nav-link" href="{% url 'programs' %}">What we do</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Get Involved</a>
+                    <a class="nav-link" href="#">Get Invovled</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'programs' %}">Gallery</a>
@@ -62,7 +63,7 @@
                         <li><a class="dropdown-item" href="#">FootSoldier</a></li>
                         <li><a class="dropdown-item" href="#">F5 Refresh</a></li>
                         <li><a class="dropdown-item" href="#">Kisima</a></li>
-
+                       
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -74,113 +75,8 @@
             </ul>
         </div>
     </nav>
+    {% block content %}{% endblock %}
 
-    <!-- carousel -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t1.6435-9/118999816_3727092747320623_5664129608848231019_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeH5SJ1BJmiRg0cA-O6BY4tnrs5Gm4KocUCuzkabgqhxQFh4bHfKVaFtfrrxNUtRMyNE_ulZDKzaLoBngo4coRNO&_nc_ohc=8Glz1-5SFXoAX8BmSWm&tn=T39EBuBSeg_1F7BJ&_nc_ht=scontent.fmba5-1.fna&oh=00_AT8bD-uRhX8Bu2ts2LRCSqDPxdolsNeogW1tNGZRmdzIhg&oe=6313A8D5"
-                    class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t1.6435-9/118999816_3727092747320623_5664129608848231019_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeH5SJ1BJmiRg0cA-O6BY4tnrs5Gm4KocUCuzkabgqhxQFh4bHfKVaFtfrrxNUtRMyNE_ulZDKzaLoBngo4coRNO&_nc_ohc=8Glz1-5SFXoAX8BmSWm&tn=T39EBuBSeg_1F7BJ&_nc_ht=scontent.fmba5-1.fna&oh=00_AT8bD-uRhX8Bu2ts2LRCSqDPxdolsNeogW1tNGZRmdzIhg&oe=6313A8D5"
-                    class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t1.6435-9/67893859_2735123779850863_6418020998221660160_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeFyj3l2eX2FYJeEHdXWz9zn-iIWhNovYeH6IhaE2i9h4UTmPNYsQVeTLU7w-TYQllvGrPFZsiQF8pbAjnwZxbTN&_nc_ohc=bCTFbamY9EwAX9DNKLd&_nc_ht=scontent.fmba5-1.fna&oh=00_AT_tMD770i6f_BfSRZw-mzmF0obn3akMWOOVR7DEpH7lzA&oe=63133A49"
-                    class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <hr>
-    <!-- programmes  -->
-
-    <div class="container">
-        <h2>Our Programmes</h2>
-
-
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t39.30808-6/269864620_5223689737660909_730760640436260515_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGnc93yB1QCKZf6ONOep5H_1OraXqDJZ9PU6tpeoMln0-I4e-T12Gf3HI3xxPhVvDsxr8qnVWU6UKWVS5jYrUJT&_nc_ohc=i5VlO6R-srMAX9ida-H&_nc_ht=scontent.fmba5-1.fna&oh=00_AT-etAtmP3gHkZdjJ97IU-KUW1R3LvHYlHLdVgmU-mbubQ&oe=62F386A0"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Camp Imbuka</h5>
-                        <p class="card-text">A day camp aimed at arousing curiosity, nurturing creativity and awakening
-                            talents. This transitional program starts grade 5 pupils on a journey of self discovery and
-                            self-awareness while inculcating essential life skills in participants (10 - 12yrs)</p>
-                        <a href="#" class="btn btn-primary">More..</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t39.30808-6/278841830_5635673396462539_4422512834180918853_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a26aad&_nc_eui2=AeFjLebt46Je1tPyLrBakth9WN5EU_oWFtpY3kRT-hYW2jjsxSCfw9nIJzVJ6uYzmuuJ-LdCLxvgExAdUNx2ZJu_&_nc_ohc=WjltqDXVD4oAX96ytiS&_nc_ht=scontent.fmba5-1.fna&oh=00_AT8lFtrwzot-ZLJpedcslELxCfyQjDqJwQKBLnC75NHlSA&oe=62F2C609"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nawiri +lus</h5>
-                        <p class="card-text"> is a Coming of Age Transition program designed specifically for young high school girls to celebrate femininity and provides contemporary rites of passage programs, focusing on providing healthy transitions from girl to young womanhood. (13 - 18yrs)
-                        </p>
-                        <a href="#" class="btn btn-primary">More..</a>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t39.30808-6/277803028_5568701833159696_6387839691071681357_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a26aad&_nc_eui2=AeHnvpBlxG3A-oFl_4wpwbftEDcOm0wcFLgQNw6bTBwUuBP7gC6gHrJV1uvbqCOx4N2Gsn1bAhgffo77zxcEU_Tu&_nc_ohc=jfFOWuVXnB0AX-gX83Z&tn=T39EBuBSeg_1F7BJ&_nc_ht=scontent.fmba5-1.fna&oh=00_AT-ERtYVWmNa5lX1Tixt0LYwujsFFqBt75ft1wTc4rPy8A&oe=62F345D9"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Stawi +lus </h5>
-                        <p class="card-text"> Once boys are done with their transition and circumcision ceremonies, they need proper teachings and values passed on to them. Rafikistry walks with young men through their high school journey to provide this much needed follow up and support.  (13 - 18yrs)
-                        </p>
-                        <a href="#" class="btn btn-primary">More..</a>
-                    </div>
-                </div>
-
-            </div>
-
-
-        </div>
-
-        <h2><a href="{% url 'programs' %}">More Programs</a></h2>
-
-
-    </div>
-    <!-- Footer  -->
     <footer>
         <div>
             <!-- Footer -->
@@ -349,16 +245,6 @@
             <!-- Footer -->
         </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 

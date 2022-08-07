@@ -10,3 +10,8 @@ def home(request):
 def about(request):
     return render(request, 'users/about.html')
 
+def programs(request):
+    return render(request, 'users/programs.html')
+
+def data(request):
+    return render(request, 'users/data.html')

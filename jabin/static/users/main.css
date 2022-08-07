@@ -11,6 +11,8 @@
 .navbar .navbar-nav .nav-link:hover{
     color: #a1ed1f;
 }
+
+
 @media only screen and (min-width: 992px) {
   .navbar {
     flex-direction: column;
