@@ -7,5 +7,6 @@ urlpatterns=[
     path('programs/',views.programs,name = 'programs'),
     path('data/',views.data,name = 'data'),
     path('contact/',views.contact,name = 'contact'),
+    path('data/', views.pivot_data, name='pivot_data'),
     
 ]

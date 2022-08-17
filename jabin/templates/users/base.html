@@ -37,9 +37,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'data' %}">Data</a>
-                </li>
+     
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'programs' %}">What we do</a>
                 </li>
@@ -51,7 +49,7 @@
                 </li>
                
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    <a class="nav-link dropdown-toggle" href="{% url 'programs' %}" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Programs
                     </a>
@@ -65,6 +63,9 @@
                         <li><a class="dropdown-item" href="#">Kisima</a></li>
                        
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'data' %}">stats</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'about-page' %}">About Us</a>
