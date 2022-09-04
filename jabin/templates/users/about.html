@@ -1,145 +1,219 @@
 {% extends "users/base.html"%}
-
-
-
 {% block content %}
+{% load static %}
 
 
-<!-- Intro Section -->
-<div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}'
-    style="background-image: url(https://scontent.fmba5-1.fna.fbcdn.net/v/t39.30808-6/280243984_5652337641462781_619042445576702688_n.png?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFjY0wgA8HVWf4jXmJ6pNSPoQhJPlfVQj2hCEk-V9VCPcRL_c9fL2L_IMCUihUSbr7V8c7huLMATPV0k2bzXI5o&_nc_ohc=31bAsWqIohwAX_V2Jin&_nc_ht=scontent.fmba5-1.fna&oh=00_AT9VpOzou_ACXp3MuJuP4gHR1dgZfj-83J1eeIMEQuyZNg&oe=62F42F92); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <div class="mask rgba-stylish-light">
-        <div class="container h-100 d-flex justify-content-center align-items-center text">
-            <div class="row pt-5 mt-3">
-                <div class="col-md-12 mb-3">
-                    <div class="intro-info-content text-center">
-                        <h1 class="display-3 white-text mb-5 wow fadeInDown" data-wow-delay="0.3s">ABOUT <a
-                                class="white-text font-weight-bold">US</a></h1>
-                        <h3 class="text-uppercase white-text mb-5 mt-1 font-weight-bold wow fadeInDown text"
-                            data-wow-delay="0.3s">
-                            Rafikistry is a Teen Life Centre with Tender Loving Care, where we Trounce, Learn and Chillax!<br>
-                            As the name suggests, Rafikistry TLC is all about Friendships!
-                            ‘Rafiki’ is the Kiswahili word for ‘friend’. A friend is one who gives help and support.<br>
+<main id="main">
 
-                            We exist to provide and increase information and skills on physical, mental, social, sexual and reproductive health as components of holistic wellbeing.<br>
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
 
-                            For more than 10 years, Rafikistry has continued to provide services in a confidential and non-judgemental environment free from discrimination, coercion and violence.
-                        </h3>
-                        <a href=""><button type="button" class="btn me-3"
-                                style="background-color:#7A981C; color:white;"><i class="bi bi-emoji-smile-fill"></i> Join Us Today!
-                                </button></a>
-
-                        <!-- <a class="btn btn-light-blue btn-lg wow fadeInDown" data-wow-delay="0.3s">portfolio</a> -->
-                        <!-- <a class="btn btn-indigo btn-lg wow fadeInDown" data-wow-delay="0.3s">About</a> -->
-                    </div>
-                </div>
-            </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>About Us</h2>
+          <ol>
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li>About Us</li>
+          </ol>
         </div>
-    </div>
-</div>
 
-</header>
+      </div>
+    </section><!-- End About Us Section -->
 
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+      <div class="container">
 
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static 'users/images/rafikione.jpeg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check2-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
 
-<section class="newsletter d-flex align-items-center justify-content-center ">
+      </div>
+    </section><!-- End About Section -->
 
-    <!-- <div class="row text-center p-5 ">
-            <div class="col">
+    <!-- ======= Facts Section ======= -->
+    <section class="facts section-bg" data-aos="fade-up">
+      <div class="container">
 
-                <div>
-                    <h3 class="news-text">Lets Keep in Touch</h3>
+        <div class="row counters">
 
-                </div><br>
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Clients</p>
+          </div>
 
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Projects</p>
+          </div>
 
-                <div class="news">
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hours Of Support</p>
+          </div>
 
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hard Workers</p>
+          </div>
 
-                </div>
-                <input type="text" placeholder="YOUR EMAIL">
-                <button class="subscribe">SUBSCRIBE </button>
+        </div>
 
+      </div>
+    </section><!-- End Facts Section -->
 
+    <!-- ======= Our Skills Section ======= -->
+    <section class="skills" data-aos="fade-up">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our Skills</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="skills-content">
+
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">HTML <i class="val">100%</i></span>
             </div>
-        </div> -->
-</section>
+          </div>
 
-{% endblock content %}
+          <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">CSS <i class="val">90%</i></span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">JavaScript <i class="val">75%</i></span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">Photoshop <i class="val">55%</i></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Skills Section -->
+
+    <!-- ======= Tetstimonials Section ======= -->
+    <section class="testimonials" data-aos="fade-up">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Tetstimonials</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="testimonials-carousel swiper">
+          <div class="swiper-wrapper">
+            <div class="testimonial-item swiper-slide">
+              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+              <h3>Saul Goodman</h3>
+              <h4>Ceo &amp; Founder</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+
+            <div class="testimonial-item swiper-slide">
+              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+              <h3>Sara Wilsson</h3>
+              <h4>Designer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+
+            <div class="testimonial-item swiper-slide">
+              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+              <h3>Jena Karlis</h3>
+              <h4>Store Owner</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+
+            <div class="testimonial-item swiper-slide">
+              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+              <h3>Matt Brandon</h3>
+              <h4>Freelancer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+
+            <div class="testimonial-item swiper-slide">
+              <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+              <h3>John Larson</h3>
+              <h4>Entrepreneur</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Ttstimonials Section -->
+
+  </main><!-- End #main -->
 
 
 
 
 
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lobster&family=Montserrat&family=Open+Sans:ital,wght@1,300&family=Rowdies&display=swap');
-
-    .newsletter {
-        height: 30vh;
-        background-color: #89CFF0;
-    }
-
-
-
-    input {
-        width: 400px;
-        padding: 12px 20px 14px 20px;
-        margin: 0px 10px 0px 0px;
-        border-radius: 4px 4px 4px 4px;
-        background-color: rgba(255, 255, 255, 0.2);
-        color: #ffffff;
-        font-family: "Lato", Sans-serif;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 22px;
-        letter-spacing: 0px;
-        border-style: solid;
-        border-width: 0px 0px 0px 0px;
-        box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 50%);
-    }
 
 
 
 
 
-    input ::placeholder {
-        color: white;
-
-    }
-
-    .subscribe {
-        width: 150px;
-        height: 50px;
-        background-color: #7A981C;
-        color: #ffffff;
-        font-family: "Fredoka One", Sans-serif;
-        font-size: 16px;
-        font-weight: 800;
-        border-radius: 4px 4px 4px 4px;
-        padding: 8px 18px 10px 18px;
-        margin: -10px 0px 0px 0px;
-
-    }
-
-    .sub-text {
-        color: #e5f5ff;
-        font-family: "Fredoka One", Sans-serif;
-        font-size: 30px;
-        font-weight: 400;
-        line-height: 31px;
-        letter-spacing: 0px;
-        text-shadow: 4px 10px 2px rgb(53 66 109 / 15%);
-    }
 
 
-    .news-text {
-        color: black;
-        font-family: "Fredoka One", Sans-serif;
-        font-size: 50px;
-        font-weight: 400;
-        line-height: 31px;
-        letter-spacing: 0px;
-        text-shadow: 4px 10px 2px rgb(53 66 109 / 15%);
-    }
-</style>
+
+
+
+
+
+
+
+
+
+{% endblock %}
