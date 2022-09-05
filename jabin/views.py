@@ -10,8 +10,7 @@ from jabin.models import Order
 def home(request):
     return render(request, 'users/home.html')
 
-def donate(request):
-    return render(request, 'users/donate.html')
+
 
 def about(request):
     return render(request, 'users/about.html')
