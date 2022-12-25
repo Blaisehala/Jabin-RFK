@@ -10,8 +10,6 @@ from jabin.models import Order
 def home(request):
     return render(request, 'users/home.html')
 
-
-
 def about(request):
     return render(request, 'users/about.html')
 
@@ -21,6 +19,9 @@ def programs(request):
 def data(request):
     return render(request, 'users/data.html')
 
+def donate(request):
+    return render(request, 'users/donate.html')  
+
 def pivot_data(request):
     dataset= Order.objects.all()
     data = serializers.serialize('json', dataset)
@@ -28,3 +29,5 @@ def pivot_data(request):
 
 def contact(request):
     return render(request, 'users/contact.html')
+
+  
