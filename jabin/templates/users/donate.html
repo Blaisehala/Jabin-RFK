@@ -9,28 +9,56 @@
 <div class="content">
     <div class="row">
         <div class="col-md-6"></div>
-        <div class="col-md-6" style="outline: 3px;">
-            <div class="head" style="height: 40px;background-color:green ;">
+        <div class="col-md-6" style="border: 2px solid yellow;">
+            <div class="head" style="height: 50px;width:100%; background-color:green ;">
                
             </div>
             <div class="rectangles pt-4">
-                <div class="rectangleA" style="height:50px ; width:130px; background-color:aqua">
-
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3"><div class="rectangleA" style="height:50px ; width:130px; border:2px solid rgba(30, 67, 86, 0.8)">
+                        <p>Give Monthly</p>
+                    </div></div>
+                    <div class="col-sm-3"><div class="rectangleB" style="height:50px ; width:130px; border:2px solid aqua">
+                        <p>Give One Time</p>
+                    </div></div>
                 </div>
-                <div class="rectangleB">
-                    
-                </div>
+                
+                
             </div>
-            <h2>hello</h2> 
-               Lorem ipsum, dolor sit amet 
-               
-               
-               
-               consectetur adipisicing elit. Eligendi culpa, veniam alias iste corrupti ad illo deserunt! Fugit impedit eum, nam, sapiente o
-               
-               
-               
-               fficia placeat labore, provident minima iure ex accusamus?
+            <p><input type="checkbox" name="honor" id="honor">Give in honor or memory</p>
+                  <hr>
+                  <p><strong>Choose an amount to give each month</strong></p>
+
+                  <button type="submit">Continue to details</button>
+
+                  <form action="/your-name/" method="post">
+                    <input id="first_name" type="text" name="first_name" value="{{ current_fname }}" placeholder="First Name"><br>
+                    <br>
+                    <input id="last_name" type="text" name="last_name" value="{{ current_lname }}" placeholder="Last Name">
+                    <br>
+                    <br>
+                    <input id="your_email" type="email" name="email" value="{{ current_email }}" placeholder="Email"><br>
+                    <br>
+                    <input id="your_phoneNumber" type="number" name="number" value="{{ current_number }}" placeholder="Phone number(Optional)">
+                    
+                    <h3><strong>BILLING INFORMATION</strong></h3>
+                    <form action="/action_page.php">
+                        <input type="number" id="add1" name="address1" placeholder="Address 1"><br>
+                        <br>
+                        <input type="number" id="add2" name="address2" value="Address 2(Optional)"><br><br>
+                        <input type="text" id="city" name="city" placeholder="City"><br><br>
+                        <input type="text" id="state/province" name="state" placeholder="State/Province"><br><br>
+                        <input type="text" id="zip" name="zip" placeholder="ZIP"><br><br>
+                        <input type="text" id="country" name="country" placeholder="Country"><br><br>
+
+                        <h3><strong>ENTER YOUR PAYMENT INFORMATION</strong></h3>
+        <input type="number" id="credit" name="credit" placeholder="Credit Card Number"><br><br>
+        <input type="text" id="cvv" name="cvv" placeholder="CVV"><br><br>
+        <input type="date" id="exp" name="exp" placeholder="Expiration Date"><br><br>
+
+<input type="submit" placeholder="DONATE">
+                </form>
         </div>
     </div>
 </div>
