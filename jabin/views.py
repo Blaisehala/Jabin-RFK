@@ -10,6 +10,8 @@ from jabin.models import Order
 def home(request):
     return render(request, 'users/home.html')
 
+def donate(request):
+    return render(request, 'users/donate.html')
 
 
 def about(request):
@@ -28,3 +30,6 @@ def pivot_data(request):
 
 def contact(request):
     return render(request, 'users/contact.html')
+
+def stats(request):
+    return render(request, 'users/stats.html')
