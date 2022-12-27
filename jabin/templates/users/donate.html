@@ -9,17 +9,17 @@
 <div class="content">
     <div class="row">
         <div class="col-md-6"></div>
-        <div class="col-md-6" style="border: 2px solid yellow;">
-            <div class="head" style="height: 50px;width:100%; background-color:green ;">
+        <div class="col-md-6" style="border: 2px solid #fdfec3;">
+            <div class="head" style="height: 50px;width:100%; background-color: rgba(30, 67, 86, 0.8) ;">
                
             </div>
             <div class="rectangles pt-4">
                 <div class="row">
                     <div class="col-sm-3"></div>
-                    <div class="col-sm-3"><div class="rectangleA" style="height:50px ; width:130px; border:2px solid rgba(30, 67, 86, 0.8)">
+                    <div class="col-sm-3"><div class="rectangleA" style="height:50px ; width:130px; border:3px solid #fdfec3">
                         <p>Give Monthly</p>
                     </div></div>
-                    <div class="col-sm-3"><div class="rectangleB" style="height:50px ; width:130px; border:2px solid aqua">
+                    <div class="col-sm-3"><div class="rectangleB" style="height:50px ; width:130px; border:2px solid rgba(30, 67, 86, 0.8)">
                         <p>Give One Time</p>
                     </div></div>
                 </div>
@@ -32,7 +32,7 @@
 
                   <button type="submit">Continue to details</button>
 
-                  <form action="/your-name/" method="post">
+                  <form action="/details/" method="post" style="margin:100px ;">
                     <input id="first_name" type="text" name="first_name" value="{{ current_fname }}" placeholder="First Name"><br>
                     <br>
                     <input id="last_name" type="text" name="last_name" value="{{ current_lname }}" placeholder="Last Name">
@@ -41,6 +41,8 @@
                     <input id="your_email" type="email" name="email" value="{{ current_email }}" placeholder="Email"><br>
                     <br>
                     <input id="your_phoneNumber" type="number" name="number" value="{{ current_number }}" placeholder="Phone number(Optional)">
+                               <br>
+                               <br>
                     
                     <h3><strong>BILLING INFORMATION</strong></h3>
                     <form action="/action_page.php">
@@ -54,10 +56,10 @@
 
                         <h3><strong>ENTER YOUR PAYMENT INFORMATION</strong></h3>
         <input type="number" id="credit" name="credit" placeholder="Credit Card Number"><br><br>
-        <input type="text" id="cvv" name="cvv" placeholder="CVV"><br><br>
+        <input type="number" id="cvv" name="cvv" placeholder="CVV"><br><br>
         <input type="date" id="exp" name="exp" placeholder="Expiration Date"><br><br>
 
-<input type="submit" placeholder="DONATE">
+<input type="submit" placeholder="DONATE" style="background-color:#fdfec3 ;">
                 </form>
         </div>
     </div>
