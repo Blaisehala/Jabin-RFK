@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'rafiki.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jabin',
-        'USER': 'hala_blaise',
-        'PASSWORD': 'hala#1996',
+        # 'NAME': 'jabin',
+        # 'USER': 'hala_blaise',
+        # 'PASSWORD': 'hala#1996',
     }
 }
 
