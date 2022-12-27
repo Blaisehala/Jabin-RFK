@@ -1,0 +1,708 @@
+{% extends "users/base.html"%}
+{% block content %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}">
+
+    {% if title %}
+  <title>Rafikistry- {{title}}</title>
+  {% else %}
+  <title>Rafikistry</title>
+
+  {% endif %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light"  style="background-color:>
+        <a class="navbar-brand" href="#"><img src="data:image/jpeg;base64,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"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler13"
+            aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="myNavbarToggler13">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+             
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'programs' %}">What we do</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Get Involved</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'programs' %}">Gallery</a>
+                </li>
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{% url 'programs' %}" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Programs
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Camp Imbuka</a></li>
+                        <li><a class="dropdown-item" href="#">Nawiri +lus</a></li>
+                        <li><a class="dropdown-item" href="#">Stawi +lus</a></li>
+                        <li><a class="dropdown-item" href="#">Xcan? Ican!</a></li>
+                        <li><a class="dropdown-item" href="#">FootSoldier</a></li>
+                        <li><a class="dropdown-item" href="#">F5 Refresh</a></li>
+                        <li><a class="dropdown-item" href="#">Kisima</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'data' %}">stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about-page' %}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t1.6435-9/118999816_3727092747320623_5664129608848231019_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeH5SJ1BJmiRg0cA-O6BY4tnrs5Gm4KocUCuzkabgqhxQFh4bHfKVaFtfrrxNUtRMyNE_ulZDKzaLoBngo4coRNO&_nc_ohc=8Glz1-5SFXoAX8BmSWm&tn=T39EBuBSeg_1F7BJ&_nc_ht=scontent.fmba5-1.fna&oh=00_AT8bD-uRhX8Bu2ts2LRCSqDPxdolsNeogW1tNGZRmdzIhg&oe=6313A8D5"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>First slide label</h5> -->
+                    <!-- <p>Some representative placeholder content for the first slide.</p> -->
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t1.6435-9/118999816_3727092747320623_5664129608848231019_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeH5SJ1BJmiRg0cA-O6BY4tnrs5Gm4KocUCuzkabgqhxQFh4bHfKVaFtfrrxNUtRMyNE_ulZDKzaLoBngo4coRNO&_nc_ohc=8Glz1-5SFXoAX8BmSWm&tn=T39EBuBSeg_1F7BJ&_nc_ht=scontent.fmba5-1.fna&oh=00_AT8bD-uRhX8Bu2ts2LRCSqDPxdolsNeogW1tNGZRmdzIhg&oe=6313A8D5"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Second slide label</h5> -->
+                    <!-- <p>Some representative placeholder content for the second slide.</p> -->
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://scontent.fmba5-1.fna.fbcdn.net/v/t1.6435-9/67893859_2735123779850863_6418020998221660160_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeFyj3l2eX2FYJeEHdXWz9zn-iIWhNovYeH6IhaE2i9h4UTmPNYsQVeTLU7w-TYQllvGrPFZsiQF8pbAjnwZxbTN&_nc_ohc=bCTFbamY9EwAX9DNKLd&_nc_ht=scontent.fmba5-1.fna&oh=00_AT_tMD770i6f_BfSRZw-mzmF0obn3akMWOOVR7DEpH7lzA&oe=63133A49"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Third slide label</h5> -->
+                    <!-- <p>Some representative placeholder content for the third slide.</p> -->
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <hr>
+
+    <div class="nyee">
+        <div class="row">
+            <div class="text-center">
+                <button class="glow-on-hover" type="button">DONATE TODAY!</button>
+                <button class="glow-on-hover" type="button">VOLUNTEER </button>
+    
+            </div>
+    
+        
+    
+        </div>
+
+    </div>
+
+
+    <!-- our pillars  -->
+
+
+
+
+
+
+
+
+
+
+    <!-- programmes  -->
+
+    <div class="container">
+        <h2>Our Programmes</h2>
+
+
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'users/images/photo_2022-08-15_10-07-57.jpg' %}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Camp Imbuka</h5>
+                        <p class="card-text">A day camp aimed at arousing curiosity, nurturing creativity and awakening
+                            talents. This transitional program starts grade 5 pupils on a journey of self discovery and
+                            self-awareness while inculcating essential life skills in participants (10 - 12yrs)</p>
+                        <a href="#" class="btn btn-primary">More..</a>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'users/images/photo_2022-08-15_05-21-46.jpg' %}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nawiri +lus</h5>
+                        <p class="card-text"> is a Coming of Age Transition program designed specifically for young high school girls to celebrate femininity and provides contemporary rites of passage programs, focusing on providing healthy transitions from girl to young womanhood. (13 - 18yrs)
+                        </p>
+                        <a href="#" class="btn btn-primary">More..</a>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'users/images/photo_2022-08-15_05-21-33 (copy).jpg' %}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Stawi +lus </h5>
+                        <p class="card-text"> Once boys are done with their transition and circumcision ceremonies, they need proper teachings and values passed on to them. Rafikistry walks with young men through their high school journey to provide this much needed follow up and support.  (13 - 18yrs)
+                        </p>
+                        <a href="#" class="btn btn-primary">More..</a>
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+
+        <h2><a href="{% url 'programs' %}">More Programs</a></h2>
+
+
+    </div>
+    <!-- Footer  -->
+    <footer>
+        <div>
+            <!-- Footer -->
+            <footer class="bg-dark text-center text-white">
+                <!-- Grid container -->
+                <div class="container p-4">
+                    <!-- Section: Social media -->
+                    <section class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/rafikistry/"
+                            role="button"><i class="bi bi-facebook"></i></a>
+
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="  https://twitter.com/Rafikistry"
+                            role="button"><i class="bi bi-twitter"></i></a>
+
+
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/rafikistry/"
+                            role="button"><i class="bi bi-instagram"></i></a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.linkedin.com/company/rafikistry/" role="button"><i
+                                class="bi bi-linkedin"></i></a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                class="bi bi-envelope"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+
+                    <!-- Section: Form -->
+                    <section class="">
+                        <form action="">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-center">
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <p class="pt-2">
+                                        <strong>Sign up for our newsletter</strong>
+                                    </p>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-5 col-12">
+                                    <!-- Email input -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" id="form5Example21" class="form-control" />
+                                        <label class="form-label" for="form5Example21">Email address</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-outline-light mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </section>
+                    <!-- Section: Form -->
+
+                    <!-- Section: Text -->
+                    <section class="mb-4">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                            repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                            eum harum corrupti dicta, aliquam sequi voluptate quas.
+                        </p>
+                    </section>
+                    <!-- Section: Text -->
+
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg col-md-4 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">Links</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Link 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Link 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Link 4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg col-md-4 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">Links</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Link 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Link 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Link 4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg col-md-4 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">About</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Programs</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Events</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Projects</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Analysis</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2022 Copyright:
+                    <a class="text-white" href="#">Rafikistry</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
+{% endblock %}
+
+
+
+ data-wow-delay="0.3s">
+                            Rafikistry is a Teen Life Centre with Tender Loving Care, where we Trounce, Learn and Chillax!<br>
+                            As the name suggests, Rafikistry TLC is all about Friendships!
+                            ‘Rafiki’ is the Kiswahili word for ‘friend’. A friend is one who gives help and support.<br>
+
+                            We exist to provide and increase information and skills on physical, mental, social, sexual and reproductive health as components of holistic wellbeing.<br>
+
+                            For more than 10 years, Rafikistry has continued to provide services in a confidential and non-judgemental environment free from discrimination, coercion and violence.
+                        </h3>
+                        <a href=""><button type="button" class="btn me-3"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROGRAM.
+
+
+
+
+
+
+
+
+
+
+<!-- <h1 class="text-center">PROGRAMS</h1> -->
+<div class="text-center">
+    <!-- <img src="data:image/jpeg;base64,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" -->
+    <!-- alt=""> -->
+
+</div>
+
+
+<div class="container">
+
+
+
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_10-07-57.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Camp Imbuka</h5>
+                    <p class="card-text">A day camp aimed at arousing curiosity, nurturing creativity and awakening
+                        talents. This transitional program starts grade 5 pupils on a journey of self discovery and
+                        self-awareness while inculcating essential life skills in participants (10 - 12yrs)</p>
+                    <!-- <a href="#" class="btn btn-primary">More..</a> -->
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_05-21-46.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Nawiri +lus</h5>
+                    <p class="card-text"> is a Coming of Age Transition program designed specifically for young high
+                        school girls to celebrate femininity and provides contemporary rites of passage programs,
+                        focusing on providing healthy transitions from girl to young womanhood. (13 - 18yrs)
+                    </p>
+                    <!-- <a href="#" class="btn btn-primary">More..</a> -->
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_05-21-33 (copy).jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Stawi +lus </h5>
+                    <p class="card-text"> Once boys are done with their transition and circumcision ceremonies, they
+                        need proper teachings and values passed on to them. Rafikistry walks with young men through
+                        their high school journey to provide this much needed follow up and support. (13 - 18yrs)
+                    </p>
+                    <!-- <a href="#" class="btn btn-primary">More..</a> -->
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src=""
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Xcan? Ican </h5>
+                    <p class="card-text">is a life skills development empowerment programme for those just leaving high
+                        school. It is a programme that seeks to help ex high schoolers in general to adjust to adult
+                        life as they move on to tertiary education and adulthood. (18 - 20yrs)
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src=""
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">FootSoilder </h5>
+                    <p class="card-text">
+                        Equipped to deliver service as the grow talents, assess capabilities and make a contribution to
+                        a better world (20yrs and Above)
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src=""
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">F5 Refresh </h5>
+                    <p class="card-text">
+                        Affirmation of everything learnt and being launched to the world of work or business. (20yrs and
+                        Above)
+
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_05-22-01.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Kisima (Reading well in order to Read well) </h5>
+                    <p class="card-text">
+                        Reading Well! is designed to help children become better readers, equipping them with reading
+                        skills to develop a lifelong interest in and appreciation for reading and learning. (10 - 12yrs)
+
+                    </p>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_05-21-42.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Becoming </h5>
+                    <p class="card-text">
+                        exists to empower young mothers and their children, by connecting them with a supportive
+                        community of other young mothers and adult role models, equipping them with life skills and
+                        impacting their futures in a positive way. (18 yrs and above)
+
+                    </p>
+                    
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_10-08-05.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Social Support and Protection</h5>
+                    <p class="card-text"> Rafikistry’s Underwear Project (PWP and DFD) PWP – PantiesWithPurpose
+                        DFD – DrawersForDudes. (10 - 12yrs)
+                        Underwear is the most under-donated, yet most needed, item of clothing. The Underwear Project
+                        (PWP and DFD) provides new underwear to young boys and girls in need. (10 - 12yrs)
+
+                    </p>
+                    
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_05-21-50.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Sip and Spill </h5>
+                    <p class="card-text">
+                        A therapeutic session that helps with boosting growth and healing among the youth in the
+                        community at large. (13yrs and above)
+                    </p>
+                    
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_05-21-50.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Bonga Fresh</h5>
+                    <p class="card-text">
+                        An Immediate Response To Creating A Safe Space Amidst The Pandemic!! And What An Amazing Ride
+                        It's Been
+
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">OpenHouse</h5>
+                    <p class="card-text">
+                        a day on which everyone – beneficiaries, partners, friends, community are encouraged to visit
+                        Rafikistry to see what it is like and to have loads of fun together. (All the above ages)
+
+                    </p>
+                    
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_10-08-01.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">CommunityKonnect </h5>
+                    <p class="card-text">
+                        An annual event that brings together past and present beneficiaries, benefactors, Parents, Well
+                        Wishers, Supporters And The Entire Rafikistry Fraternity to reconnect with the past, see the
+                        present and project the future!. It is a virtual experience. (All the above ages)
+
+                    </p>
+                    
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'users/images/photo_2022-08-15_05-21-54.jpg' %}"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Board Games and Gameplan </h5>
+                    <p class="card-text">
+                        Is a no holds barred all out afternoon of Fun, Laughter, Games and more. (All the above ages)
+
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+</div>
