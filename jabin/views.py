@@ -12,6 +12,8 @@ def home(request):
 
 def donate(request):
     return render(request, 'users/donate.html')
+    return render(request, "users/donate.html")
+    
 
 
 def about(request):
