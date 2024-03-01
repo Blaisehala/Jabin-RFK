@@ -39,3 +39,8 @@ def contact(request):
   
 def stats(request):
     return render(request, 'users/stats.html')
+
+
+  
+def tools(request):
+    return render(request, 'users/tools.html')
